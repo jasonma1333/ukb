@@ -1,0 +1,14 @@
+library(ukbtools)
+     
+
+in_dir = "dir/file_location"
+out_path = "dir/file_output_location"
+     
+
+my_ukb_data <- ukb_df("decoded", in_dir)
+df_field <- ukb_df_field("decoded", in_dir)
+     
+
+arrow::write_feather(my_ukb_data, out_path)
+arrow::write_feather(df_field, out_path)
+     
